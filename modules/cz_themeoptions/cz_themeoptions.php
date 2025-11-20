@@ -89,14 +89,14 @@ class Cz_Themeoptions extends Module implements WidgetInterface
         Configuration::updateValue('CZBOX_BGIMG_STYLE', 'strech');
         Configuration::updateValue('CZSTICKY_HEADER', 1);
         Configuration::updateValue('CZBORDER_RADIUS', 1);
-        Configuration::updateValue('CZPRIMARY_COLOR', '#afbc25');
+        Configuration::updateValue('CZPRIMARY_COLOR', '#000000');
         Configuration::updateValue('CZSECONDARY_COLOR', '#ffffff');
         Configuration::updateValue('CZPRICE_COLOR', '#000000');
-        Configuration::updateValue('CZLINKHOVER_COLOR', '#afbc25');
+        Configuration::updateValue('CZLINKHOVER_COLOR', '#000000');
         Configuration::updateValue('CZBOX_BODYBKG_COLOR', '#ffffff');
-        Configuration::updateValue('CZBODY_FONT', 'Roboto');
-        Configuration::updateValue('CZTITLE_FONT', 'Roboto');
-        Configuration::updateValue('CZBANNER_FONT', 'Roboto');
+        Configuration::updateValue('CZBODY_FONT', 'Ping AR + LT Thin');
+        Configuration::updateValue('CZTITLE_FONT', 'Ping AR + LT Thin');
+        Configuration::updateValue('CZBANNER_FONT', 'Ping AR + LT Thin');
         Configuration::updateValue('CZBODY_FONT_SIZE', '14px');
         Configuration::updateValue('CZCUSTOM_CSS', '');
         
