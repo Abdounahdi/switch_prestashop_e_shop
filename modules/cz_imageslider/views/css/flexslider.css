@@ -46,29 +46,29 @@
   position: relative;
 }
 .flexslider .slides li .slide_content {
-	position: absolute;
-	bottom: 120px;
-	left: 45px;
-	text-align: left;
-	font-family: 'Roboto', sans-serif;
-	letter-spacing: .3px;
-	color: #fff;
+  position: absolute;
+  bottom: 120px;
+  left: 45px;
+  text-align: left;
+  font-family: "Roboto", sans-serif;
+  letter-spacing: 0.3px;
+  color: #fff;
 }
 .flexslider .slides li .slide_content .headdings.left-align .sub_headding {
   margin: 0 0 25px;
   display: inline-block;
 }
 .flexslider .slides li .slide_content .headdings .headding_text {
-	font-weight: 200;
-	font-size: 30px;
-	line-height: 40px;
+  font-weight: 200;
+  font-size: 30px;
+  line-height: 40px;
 }
 .flexslider .slides li .slide_content .headdings .sub_headding {
-	font-weight: 500;
-	font-size: 46px;
-	line-height: 57px;
-	margin-top: 24px;
-	margin-bottom: 75px;
+  font-weight: 500;
+  font-size: 46px;
+  line-height: 57px;
+  margin-top: 24px;
+  margin-bottom: 75px;
 }
 .flexslider .slides li .slide_content .headdings .sub_headding span {
   display: block;
@@ -81,51 +81,87 @@
   text-transform: capitalize;
   font-size: 15px;
 }
-.flexslider .slides li .slide_content .headdings .button-shopnow .btn-primary:hover {
-	color: #000;
-	background-color: #fff;
-	border-color: #fff;
+.flexslider
+  .slides
+  li
+  .slide_content
+  .headdings
+  .button-shopnow
+  .btn-primary:hover {
+  color: #000;
+  background-color: #fff;
+  border-color: #fff;
 }
 
 .flexslider .slides li .slide_content .headdings .headding_text,
 .flexslider .slides li .slide_content .headdings .sub_headding,
 .flexslider .slides li .slide_content .headdings .button-shopnow {
-    opacity: 0;
-    -webkit-transition: opacity 0.7s, -webkit-transform 0.7s;
-    transition: opacity 0.7s,-webkit-transform 0.7s,
-    -moz-transform 0.7s,-o-transform 0.7s,transform 0.7s;
+  opacity: 0;
+  -webkit-transition: opacity 0.7s, -webkit-transform 0.7s;
+  transition: opacity 0.7s, -webkit-transform 0.7s, -moz-transform 0.7s,
+    -o-transform 0.7s, transform 0.7s;
 }
 .flexslider .slides li .slide_content .headdings .headding_text,
-.flexslider .slides li .slide_content .headdings .sub_headding{
+.flexslider .slides li .slide_content .headdings .sub_headding {
   webkit-transform: translate3d(30%, 0%, 0);
   transform: translate3d(30%, 0%, 0);
   -webkit-transition-delay: 0.3s;
   transition-delay: 0.3s;
 }
-.flexslider .slides li.flex-active-slide .slide_content .headdings .headding_text{
-    -webkit-transition-delay: 0.4s;
-    transition-delay: 0.4s;
+.flexslider
+  .slides
+  li.flex-active-slide
+  .slide_content
+  .headdings
+  .headding_text {
+  -webkit-transition-delay: 0.4s;
+  transition-delay: 0.4s;
 }
-.flexslider .slides li.flex-active-slide .slide_content .headdings .sub_headding{
-    -webkit-transition-delay: 0.6s;
-    transition-delay: 0.6s;
+.flexslider
+  .slides
+  li.flex-active-slide
+  .slide_content
+  .headdings
+  .sub_headding {
+  -webkit-transition-delay: 0.6s;
+  transition-delay: 0.6s;
 }
-.flexslider .slides li .slide_content .headdings .button-shopnow{
+.flexslider .slides li .slide_content .headdings .button-shopnow {
   -webkit-transform: translate3d(0%, 30%, 0);
-    transform: translate3d(0%, 30%, 0);
-    -webkit-transition-delay: 0s;
-    transition-delay: 0s;
-} 
-.flexslider .slides li.flex-active-slide .slide_content .headdings .button-shopnow{
-    -webkit-transition-delay: 0.8s;
-    transition-delay: 0.8s;
+  transform: translate3d(0%, 30%, 0);
+  -webkit-transition-delay: 0s;
+  transition-delay: 0s;
 }
-.flexslider .slides li.flex-active-slide .slide_content .headdings .headding_text,
-.flexslider .slides li.flex-active-slide .slide_content .headdings .sub_headding,
-.flexslider .slides li.flex-active-slide .slide_content .headdings .button-shopnow {
-    opacity: 1;
-    -webkit-transform: translate3d(0%, 0%, 0);
-    transform: translate3d(0%, 0%, 0);
+.flexslider
+  .slides
+  li.flex-active-slide
+  .slide_content
+  .headdings
+  .button-shopnow {
+  -webkit-transition-delay: 0.8s;
+  transition-delay: 0.8s;
+}
+.flexslider
+  .slides
+  li.flex-active-slide
+  .slide_content
+  .headdings
+  .headding_text,
+.flexslider
+  .slides
+  li.flex-active-slide
+  .slide_content
+  .headdings
+  .sub_headding,
+.flexslider
+  .slides
+  li.flex-active-slide
+  .slide_content
+  .headdings
+  .button-shopnow {
+  opacity: 1;
+  -webkit-transform: translate3d(0%, 0%, 0);
+  transform: translate3d(0%, 0%, 0);
 }
 
 @media (max-width: 1259px) {
@@ -133,7 +169,6 @@
     bottom: 45px;
     left: 40px;
   }
-
 }
 @media (max-width: 1199px) {
   .flexslider .slides li .slide_content {
@@ -147,7 +182,13 @@
   .flexslider .slides li .slide_content .headdings .sub_headding span {
     line-height: 50px;
   }
-  .flexslider .slides li .slide_content .headdings .button-shopnow .btn-primary {
+  .flexslider
+    .slides
+    li
+    .slide_content
+    .headdings
+    .button-shopnow
+    .btn-primary {
     padding: 9px 28px;
   }
 }
@@ -159,7 +200,13 @@
     margin-bottom: 30px;
     margin-top: 18px;
   }
-  .flexslider .slides li .slide_content .headdings .button-shopnow .btn-primary {
+  .flexslider
+    .slides
+    li
+    .slide_content
+    .headdings
+    .button-shopnow
+    .btn-primary {
     padding: 8px 26px;
     font-size: 15px;
   }
@@ -169,7 +216,6 @@
   }
 }
 @media (max-width: 767px) {
-
   .flexslider .slides li .slide_content .headdings .sub_headding {
     font-size: 34px;
     line-height: 35px;
@@ -177,7 +223,13 @@
   .flexslider .slides li .slide_content .headdings .sub_headding span {
     line-height: 34px;
   }
-  .flexslider .slides li .slide_content .headdings .button-shopnow .btn-primary {
+  .flexslider
+    .slides
+    li
+    .slide_content
+    .headdings
+    .button-shopnow
+    .btn-primary {
     padding: 7px 20px;
     font-size: 14px;
   }
@@ -212,7 +264,13 @@
   .flexslider .slides li .slide_content .headdings .sub_headding span {
     line-height: 30px;
   }
-  .flexslider .slides li .slide_content .headdings .button-shopnow .btn-primary {
+  .flexslider
+    .slides
+    li
+    .slide_content
+    .headdings
+    .button-shopnow
+    .btn-primary {
     padding: 6px 18px;
     font-size: 13px;
   }
@@ -235,7 +293,13 @@
     margin-bottom: 14px;
     margin-top: 7px;
   }
-  .flexslider .slides li .slide_content .headdings .button-shopnow .btn-primary {
+  .flexslider
+    .slides
+    li
+    .slide_content
+    .headdings
+    .button-shopnow
+    .btn-primary {
     padding: 4px 15px;
     font-size: 13px;
     text-transform: capitalize;
@@ -250,10 +314,16 @@
   .flexslider .slides li .slide_content .headdings .sub_headding span {
     line-height: 24px;
   }
-  .flexslider .slides li .slide_content .headdings .button-shopnow .btn-primary {
+  .flexslider
+    .slides
+    li
+    .slide_content
+    .headdings
+    .button-shopnow
+    .btn-primary {
     padding: 3px 12px;
     font-size: 12px;
-  } 
+  }
   .flexslider .slides li .slide_content {
     bottom: 38px;
   }
@@ -286,17 +356,21 @@ html[xmlns] .flexslider .slides {
 /* ====================================================================================================================
  * DEFAULT THEME
  * ====================================================================================================================*/
- .flexslider {
-	margin: 0;
-	position: relative;
-	zoom: 1;
-	overflow: hidden;
-	float: right;
-	width: calc(100% - 260px);
-	padding-left: 20px;
-	margin-top: 20px;
+.flexslider {
+  margin: 0;
+  position: relative;
+  zoom: 1;
+  overflow: hidden;
+  float: right;
+  width: calc(100% - 260px);
+  padding-left: 20px;
+  margin-top: 20px;
 }
-.flexslider .caption-description h2{ font-size: 30px; margin-bottom:25px; letter-spacing: 9px;}
+.flexslider .caption-description h2 {
+  font-size: 30px;
+  margin-bottom: 25px;
+  letter-spacing: 9px;
+}
 .flexslider .slides {
   zoom: 1;
 }
@@ -359,14 +433,14 @@ html[xmlns] .flexslider .slides {
   color: #fff;
   font-weight: 300;
 }
-.flex-direction-nav a:hover:before{
+.flex-direction-nav a:hover:before {
   color: #000;
 }
 .flex-direction-nav a.flex-prev:before {
-  content: '\f104';
+  content: "\f104";
 }
 .flex-direction-nav a.flex-next:before {
-  content: '\f105';
+  content: "\f105";
 }
 .flex-direction-nav .flex-prev {
   left: 20px;
@@ -386,42 +460,42 @@ html[xmlns] .flexslider .slides {
   -o-border-radius: 5px 0px 0px 5px;
 }
 .flexslider:hover .flex-direction-nav .flex-prev {
-	opacity: 1;
+  opacity: 1;
 }
 .flexslider:hover .flex-direction-nav .flex-next {
-	opacity: 1;
+  opacity: 1;
 }
 
 .flex-direction-nav .flex-disabled {
-	opacity: 0!important;
-	filter: alpha(opacity=0);
-	cursor: default;
-	z-index: -1;
+  opacity: 0 !important;
+  filter: alpha(opacity=0);
+  cursor: default;
+  z-index: -1;
 }
 .flex-pauseplay a {
-	display: block;
-	width: 20px;
-	height: 20px;
-	position: absolute;
-	bottom: 5px;
-	left: 10px;
-	opacity: 0.8;
-	z-index: 10;
-	overflow: hidden;
-	cursor: pointer;
-	color: #000;
+  display: block;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  bottom: 5px;
+  left: 10px;
+  opacity: 0.8;
+  z-index: 10;
+  overflow: hidden;
+  cursor: pointer;
+  color: #000;
 }
 .flex-pauseplay a:before {
   font-family: "Material Icons";
   font-size: 20px;
   display: inline-block;
-  content: '\E039';
+  content: "\E039";
 }
 .flex-pauseplay a:hover {
   opacity: 1;
 }
 .flex-pauseplay a.flex-play:before {
-  content: '\E036';
+  content: "\E036";
 }
 .flex-control-nav {
   width: 100%;
@@ -438,37 +512,37 @@ html[xmlns] .flexslider .slides {
   line-height: 21px;
 }
 .flex-control-nav li {
-	margin: 0 5px;
-	display: inline-block;
-	zoom: 1;
-	*display: inline;
+  margin: 0 5px;
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
 }
 .flex-control-paging li a {
-	width: 12px;
-    height: 12px;
-	display: block;
-    background: #ffffff;
-	cursor: pointer;
-	text-indent: -9999px;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    -ms-border-radius: 3px;
-    -o-border-radius: 3px;
-    border-radius: 3px;
-	-webkit-transition: all 500ms ease;
-	-moz-transition: all 500ms ease;
-	-o-transition: all 500ms ease;
-	transition: all 500ms ease;
+  width: 12px;
+  height: 12px;
+  display: block;
+  background: #ffffff;
+  cursor: pointer;
+  text-indent: -9999px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+  -webkit-transition: all 500ms ease;
+  -moz-transition: all 500ms ease;
+  -o-transition: all 500ms ease;
+  transition: all 500ms ease;
 }
 .flex-control-paging li a:hover,
 .flex-control-paging li a.flex-active {
-	background: #afbc26;
-    border-color: #000;
-	ransform: rotate(45deg);
-    -webkit-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    -o-transform: rotate(45deg);
-    -moz-transform: rotate(45deg);
+  background: #afbc26;
+  border-color: #000;
+  ransform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
   -webkit-transition: all 500ms ease 0s;
   -moz-transition: all 500ms ease 0s;
   -o-transition: all 500ms ease 0s;
@@ -478,27 +552,27 @@ html[xmlns] .flexslider .slides {
 	cursor: default;
 }*/
 .flex-control-thumbs {
-	margin: 5px 0 0;
-	position: static;
-	overflow: hidden;
+  margin: 5px 0 0;
+  position: static;
+  overflow: hidden;
 }
 .flex-control-thumbs li {
-	width: 25%;
-	float: left;
-	margin: 0;
+  width: 25%;
+  float: left;
+  margin: 0;
 }
 .flex-control-thumbs img {
-	width: 100%;
-	height: auto;
-	display: block;
-	opacity: .7;
-	cursor: pointer;
-	-moz-user-select: none;
-	-webkit-transition: all 1s ease;
-	-moz-transition: all 1s ease;
-	-ms-transition: all 1s ease;
-	-o-transition: all 1s ease;
-	transition: all 1s ease;
+  width: 100%;
+  height: auto;
+  display: block;
+  opacity: 0.7;
+  cursor: pointer;
+  -moz-user-select: none;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
 }
 .flex-control-thumbs img:hover {
   opacity: 1;
@@ -511,18 +585,20 @@ html[xmlns] .flexslider .slides {
  * RESPONSIVE
  * ====================================================================================================================*/
 
- @media (max-width: 1199px) {
+@media (max-width: 1199px) {
   .flexslider {
     width: calc(100% - 199px);
   }
 }
 @media (max-width: 991px) {
   .flexslider {
-		width: 100%;
+    width: 100%;
     padding: 0;
     margin-top: 0;
   }
-	.flex-direction-nav{ display: none; }
+  .flex-direction-nav {
+    display: none;
+  }
 }
 @media (max-width: 480px) {
   .flex-control-nav {
