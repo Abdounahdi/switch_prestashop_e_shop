@@ -1,0 +1,95 @@
+Theme PRS110251_Paprica Update History
+==============================
+
+Theme Version : 3.2.0
+=============
+## Date[13/08/2024]
+
+- Fixed some hook related problem with modules
+- Fixed deprecated error message
+- Fixed blog module and count down timer style issue
+
+=================================================
+
+Theme Version : 3.1.0
+=============
+## Date[09/08/2023]
+
+- Added theme compatibility with prestashop version 8.1.x.
+- Updated theme and modules for PHP 8.x Compatibility
+- Fixed some miscellaneous bug with modules
+
+=================================================
+
+Theme Version : 3.0.0
+=============
+## Date[22/02/2023]
+
+- Updated theme file and modules to make it compatible with prestashop version 8.0.x.
+
+=================================================
+
+Theme Version : 2.0.0
+=============
+## Date[27/08/2022]
+
+- Added "Theme Options" Module for Color, Font and Other Theme Related Settings
+- Added "About Store" Secton on Homepage
+- Added stock progress bar feature display on product detail page
+- Theme fully translated for 10+ languages
+- Improve theme design code and quality
+- Improve responsive design
+
+=================================================
+
+Theme Version : 1.2.0
+=============
+## Date[24/11/2021]
+
+- Updated theme files to make it compatible with prestashop version 1.7.8.x
+
+=================================================
+
+Theme Version : 1.1.0
+=============
+## Date[09/04/2020]
+
+- Updated theme design which compatible with prestashop version 1.7.4.x to 1.7.6.x
+
+=================================================
+
+Theme Version : 1.0.2
+=============
+## Date[20/07/2020]
+
+- Added "CZ - Feature" Module for add compare and wishlist feature in this theme
+- Fixed minor css update
+
+-------------------------------
+
+Updated Files List
+-----------
+themes\Paprica\assets\css\theme.css
+themes\Paprica\assets\css\rtl.css
+
+themes\Paprica\assets\js\custom.js
+
+themes\Paprica\config\theme.yml
+
+themes\Paprica\templates\catalog\listing\category.tpl
+themes\Paprica\modules\ps_customersignin\ps_customersignin.tpl
+
+themes\Paprica\templates\catalog\_partials\miniatures\product.tpl
+themes\Paprica\templates\catalog\_partials\miniatures\product-listgrid.tpl
+themes\Paprica\templates\catalog\_partials\miniatures\product-nocart.tpl
+themes\Paprica\templates\catalog\_partials\miniatures\product-sidebar.tpl
+themes\Paprica\templates\catalog\_partials\product-add-to-cart.tpl
+themes\Paprica\templates\catalog\_partials\product-details.tpl
+
+
+
+=================================================
+
+Theme Version : 1.0.0
+=============
+- Initial Release

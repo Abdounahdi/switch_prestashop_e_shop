@@ -1,0 +1,131 @@
+/**
+ * Copyright since 2007 PrestaShop SA and Contributors
+ * PrestaShop is an International Registered Trademark & Property of PrestaShop SA
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License 3.0 (AFL-3.0)
+ * that is bundled with this package in the file LICENSE.md.
+ * It is also available through the world-wide-web at this URL:
+ * https://opensource.org/licenses/AFL-3.0
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@prestashop.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade PrestaShop to newer
+ * versions in the future. If you wish to customize PrestaShop for your
+ * needs please refer to https://devdocs.prestashop.com/ for more information.
+ *
+ * @author    PrestaShop SA and Contributors <contact@prestashop.com>
+ * @copyright Since 2007 PrestaShop SA and Contributors
+ * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
+ */
+.cz-product-tag {
+	margin-bottom: 35px;
+}
+.cz-tagger-Tag {
+    border: 1px solid #bbcdd2;
+    border-radius: 5px;
+    padding: 10px 30px 10px 10px;
+    position: relative;
+    margin: 5px;
+}
+.cz-remove {
+    cursor: pointer;
+    margin-left: 10px;
+    position: absolute;
+    top: 8px;
+    right: 5px;
+    font-size: 20px;
+}
+.cz-error {
+	display: none;
+}
+#cz-search-product {
+	position: relative;
+}
+.cz-loading {
+	position: absolute;
+	z-index: 9999999;
+	bottom: -8px;
+	left: 245px;
+	display: none;
+}
+.cssload-container {
+	width: 100%;
+	height: 49px;
+	text-align: center;
+}
+.cssload-double-torus {
+	width: 49px;
+	height: 49px;
+	margin: 0 auto;
+	border: 4px double;
+	border-radius: 50%;
+	border-color: transparent rgba(0,0,0,0.9) rgba(0,0,0,0.9);
+	animation: cssload-spin 690ms infinite linear;
+		-o-animation: cssload-spin 690ms infinite linear;
+		-ms-animation: cssload-spin 690ms infinite linear;
+		-webkit-animation: cssload-spin 690ms infinite linear;
+		-moz-animation: cssload-spin 690ms infinite linear;
+}
+@keyframes cssload-spin {
+	100%{ transform: rotate(360deg); transform: rotate(360deg); }
+}
+@-o-keyframes cssload-spin {
+	100%{ -o-transform: rotate(360deg); transform: rotate(360deg); }
+}
+@-ms-keyframes cssload-spin {
+	100%{ -ms-transform: rotate(360deg); transform: rotate(360deg); }
+}
+@-webkit-keyframes cssload-spin {
+	100%{ -webkit-transform: rotate(360deg); transform: rotate(360deg); }
+}
+@-moz-keyframes cssload-spin {
+	100%{ -moz-transform: rotate(360deg); transform: rotate(360deg); }
+}
+.cz-res{
+    position: relative;
+}
+.cz-res .product-list .cz-product-list{
+	list-style: none;
+	display: flex;
+    flex-wrap: wrap;
+    border: 1px solid #ddd;
+    margin-bottom: 30px;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.cz-res .product-list .cz-product-item{
+	display: flex;
+    flex-direction: column;
+    margin: 10px;
+    width: 150px;
+    padding: 10px;
+	border: 1px solid #ddd;
+	cursor: pointer;
+}
+
+.cz-res .product-list .cz-product-item img{
+	margin-bottom: 10px;
+}
+.cz-res .cz-close{
+	cursor: pointer;
+	display: none;
+    width: 40px;
+    height: 40px;
+    border: 1px solid #bbcdd2;
+    border-radius: 50%;
+    text-align: center;
+    position: absolute;
+    right: -20px;
+    background: #fff;
+    top: -20px;
+}
+
+.cz-res .cz-close i{
+	line-height: 39px;
+}

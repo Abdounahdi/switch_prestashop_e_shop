@@ -10,6 +10,7 @@ services:
       MYSQL_PASSWORD: prestashop123
     volumes:
       - mysql-data:/var/lib/mysql
+      - ./php.ini:/usr/local/etc/php/conf.d/custom.ini
     ports:
       - "3307:3306"
 

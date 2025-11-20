@@ -1,0 +1,43 @@
+/*
+ * Custom code goes here.
+ * A template should always ship with an empty custom.css
+ */
+
+body.box_layout {
+    background-color: #f0f0f0;
+}
+body.box_layout #page{
+    margin: 0 20px;
+    background-color: #fff;
+    -moz-box-shadow: 0 1px 3px 1px rgb(128 128 128 / 27%);
+    -webkit-box-shadow: 0 1px 3px 1px rgb(128 128 128 / 27%);
+    -o-box-shadow: 0 1px 3px 1px rgb(128 128 128 / 27%);
+    -ms-box-shadow: 0 1px 3px 1px rgb(128 128 128 / 27%);
+    box-shadow: 0 1px 3px 1px rgb(128 128 128 / 27%);
+}
+body.box_layout .container{
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+@media (min-width: 1300px){
+    body.box_layout #page{
+        margin: 0 auto;
+        max-width: 1260px;
+    }
+}
+
+@media (max-width: 991px){
+    body.box_layout #page {
+        margin: 0 15px;
+    }
+    body.box_layout #page.active {
+        margin: 0;
+    }
+}
+
+@media (max-width: 480px){
+    body.box_layout #page{
+        margin: 0px;
+    }
+}
