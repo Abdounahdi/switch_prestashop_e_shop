@@ -30,26 +30,12 @@ services:
       - bash
       - -c
       - |
-        # Only extract the ZIP the very first time
-        if [ ! -f install/index.php ] && [ -f /tmp/prestashop.zip ]; then
-          echo "First start – extracting PrestaShop 8.2.3 into your local folder..."
-          unzip -q /tmp/prestashop.zip -d .
-          chown -R www-data:www-data .
-        fi
-
-        # Install system packages
         apt-get update -qq
         apt-get install -y --no-install-recommends unzip libzip-dev libpng-dev libjpeg-dev libfreetype6-dev libicu-dev > /dev/null 2>&1
-
-        # PHP extensions
         docker-php-ext-configure gd --with-freetype --with-jpeg
         docker-php-ext-install -j$(nproc) mysqli pdo_mysql zip gd intl bcmath > /dev/null 2>&1
-
-        # PHP settings
         echo "short_open_tag = Off" > /usr/local/etc/php/conf.d/custom.ini
         echo "date.timezone = Europe/Paris" >> /usr/local/etc/php/conf.d/custom.ini
-
-        # Apache
         a2enmod rewrite > /dev/null
 
         apache2-foreground
