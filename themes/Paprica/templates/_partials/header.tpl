@@ -29,32 +29,32 @@
 {/block}
 
 {block name='header_nav'}
-<nav class="header-nav">
-	<div class="container">
-        
-		{*<div class="hidden-sm-down">*}
-			<div class="left-nav">
-				{hook h='displayNav1'}
-			</div>
+	<nav class="header-nav">
+		<div class="container">
 			
-			<div class="right-nav">
-				{hook h='displayNav2'}
-			</div>
-		{*</div>*}
-		
-		{*<div class="hidden-md-up text-xs-center mobile">
-			<div class="pull-xs-left" id="menu-icon">
-				<i class="material-icons menu-open">&#xE5D2;</i>
-				<i class="material-icons menu-close">&#xE5CD;</i>			  
-			</div>
-			<div class="pull-xs-right" id="_mobile_cart"></div>
-			<div class="pull-xs-right" id="_mobile_user_info"></div>
-			<div class="top-logo" id="_mobile_logo"></div>
-			<div class="clearfix"></div>
-		</div> *}
-        
-	</div>
-</nav>
+			{*<div class="hidden-sm-down">*}
+				<div class="left-nav">
+					{hook h='displayNav1'}
+				</div>
+				
+				<div class="right-nav">
+					{hook h='displayNav2'}
+				</div>
+			{*</div>*}
+			
+			{*<div class="hidden-md-up text-xs-center mobile">
+				<div class="pull-xs-left" id="menu-icon">
+					<i class="material-icons menu-open">&#xE5D2;</i>
+					<i class="material-icons menu-close">&#xE5CD;</i>			  
+				</div>
+				<div class="pull-xs-right" id="_mobile_cart"></div>
+				<div class="pull-xs-right" id="_mobile_user_info"></div>
+				<div class="top-logo" id="_mobile_logo"></div>
+				<div class="clearfix"></div>
+			</div> *}
+			
+		</div>
+	</nav>
 {/block}
 
 {block name='header_top'}
