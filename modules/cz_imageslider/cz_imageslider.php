@@ -66,7 +66,7 @@ class Cz_ImageSlider extends Module implements WidgetInterface
         /* Adds Module */
         if (parent::install() &&
             $this->registerHook('displayHeader') &&
-            $this->registerHook('displayTopColumn') &&   //  OR $this->registerHook('displayHome') && 
+            $this->registerHook('displayWrapperTop') &&   //  OR $this->registerHook('displayHome') && 
             $this->registerHook('actionShopDataDuplication')
         ) {
             $shops = Shop::getContextListShopID();

@@ -1,608 +1,319 @@
-/*
- * jQuery FlexSlider v2.6.3
- * http://www.woothemes.com/flexslider/
- *
- * Copyright 2012 WooThemes
- * Free to use under the GPLv2 and later license.
- * http://www.gnu.org/licenses/gpl-2.0.html
- *
- * Contributing author: Tyler Smith (@mbmufffin)
- *
- */
+/* ===================================================================
+   FULLSCREEN HERO SLIDER – FULL WIDTH + FULL HEIGHT
+   TEXT: LEFT-ALIGNED but VERTICALLY CENTERED
+   =================================================================== */
 
-/* ====================================================================================================================
- * RESETS
- * ====================================================================================================================*/
-.flex-container a:hover,
-.flex-slider a:hover {
-  outline: none;
-}
-.slides,
-.slides > li,
-.flex-control-nav,
-.flex-direction-nav {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-.flex-pauseplay span {
-  text-transform: capitalize;
-}
-/* ====================================================================================================================
- * BASE STYLES
- * ====================================================================================================================*/
 .flexslider {
-  margin: 0;
-  padding: 0;
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  position: relative;
+  overflow: hidden;
+  float: none !important;
 }
-.flexslider .slides li {
+
+.flex-viewport {
+  height: 100% !important;
+}
+
+.flexslider .slides > li {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
   display: none;
   -webkit-backface-visibility: hidden;
-  position: relative;
-  overflow: hidden;
-  text-align: center;
-}
-.flexslider .caption-description > .container {
-  position: relative;
-}
-.flexslider .slides li .slide_content {
-  position: absolute;
-  bottom: 120px;
-  left: 45px;
-  text-align: left;
-  font-family: "Roboto", sans-serif;
-  letter-spacing: 0.3px;
-  color: #fff;
-}
-.flexslider .slides li .slide_content .headdings.left-align .sub_headding {
-  margin: 0 0 25px;
-  display: inline-block;
-}
-.flexslider .slides li .slide_content .headdings .headding_text {
-  font-weight: 200;
-  font-size: 30px;
-  line-height: 40px;
-}
-.flexslider .slides li .slide_content .headdings .sub_headding {
-  font-weight: 500;
-  font-size: 46px;
-  line-height: 57px;
-  margin-top: 24px;
-  margin-bottom: 75px;
-}
-.flexslider .slides li .slide_content .headdings .sub_headding span {
-  display: block;
-}
-.flexslider .slides li .slide_content .headdings .button-shopnow .btn-primary {
-  padding: 11px 30px;
-  border: none;
-  display: inline-block;
-  line-height: 23px;
-  text-transform: capitalize;
-  font-size: 15px;
-}
-.flexslider
-  .slides
-  li
-  .slide_content
-  .headdings
-  .button-shopnow
-  .btn-primary:hover {
-  color: #000;
-  background-color: #fff;
-  border-color: #fff;
 }
 
-.flexslider .slides li .slide_content .headdings .headding_text,
-.flexslider .slides li .slide_content .headdings .sub_headding,
-.flexslider .slides li .slide_content .headdings .button-shopnow {
-  opacity: 0;
-  -webkit-transition: opacity 0.7s, -webkit-transform 0.7s;
-  transition: opacity 0.7s, -webkit-transform 0.7s, -moz-transform 0.7s,
-    -o-transform 0.7s, transform 0.7s;
-}
-.flexslider .slides li .slide_content .headdings .headding_text,
-.flexslider .slides li .slide_content .headdings .sub_headding {
-  webkit-transform: translate3d(30%, 0%, 0);
-  transform: translate3d(30%, 0%, 0);
-  -webkit-transition-delay: 0.3s;
-  transition-delay: 0.3s;
-}
-.flexslider
-  .slides
-  li.flex-active-slide
-  .slide_content
-  .headdings
-  .headding_text {
-  -webkit-transition-delay: 0.4s;
-  transition-delay: 0.4s;
-}
-.flexslider
-  .slides
-  li.flex-active-slide
-  .slide_content
-  .headdings
-  .sub_headding {
-  -webkit-transition-delay: 0.6s;
-  transition-delay: 0.6s;
-}
-.flexslider .slides li .slide_content .headdings .button-shopnow {
-  -webkit-transform: translate3d(0%, 30%, 0);
-  transform: translate3d(0%, 30%, 0);
-  -webkit-transition-delay: 0s;
-  transition-delay: 0s;
-}
-.flexslider
-  .slides
-  li.flex-active-slide
-  .slide_content
-  .headdings
-  .button-shopnow {
-  -webkit-transition-delay: 0.8s;
-  transition-delay: 0.8s;
-}
-.flexslider
-  .slides
-  li.flex-active-slide
-  .slide_content
-  .headdings
-  .headding_text,
-.flexslider
-  .slides
-  li.flex-active-slide
-  .slide_content
-  .headdings
-  .sub_headding,
-.flexslider
-  .slides
-  li.flex-active-slide
-  .slide_content
-  .headdings
-  .button-shopnow {
-  opacity: 1;
-  -webkit-transform: translate3d(0%, 0%, 0);
-  transform: translate3d(0%, 0%, 0);
-}
-
-@media (max-width: 1259px) {
-  .flexslider .slides li .slide_content {
-    bottom: 45px;
-    left: 40px;
-  }
-}
-@media (max-width: 1199px) {
-  .flexslider .slides li .slide_content {
-    bottom: 90px;
-  }
-  .flexslider .slides li .slide_content .headdings .sub_headding {
-    font-size: 38px;
-    line-height: 37px;
-    margin-bottom: 40px;
-  }
-  .flexslider .slides li .slide_content .headdings .sub_headding span {
-    line-height: 50px;
-  }
-  .flexslider
-    .slides
-    li
-    .slide_content
-    .headdings
-    .button-shopnow
-    .btn-primary {
-    padding: 9px 28px;
-  }
-}
-@media (max-width: 991px) {
-  .flexslider .slides li .slide_content {
-    bottom: 90px;
-  }
-  .flexslider .slides li .slide_content .headdings .sub_headding {
-    margin-bottom: 30px;
-    margin-top: 18px;
-  }
-  .flexslider
-    .slides
-    li
-    .slide_content
-    .headdings
-    .button-shopnow
-    .btn-primary {
-    padding: 8px 26px;
-    font-size: 15px;
-  }
-  .flexslider .slides li .slide_content .headdings .headding_text {
-    font-size: 25px;
-    line-height: 30px;
-  }
-}
-@media (max-width: 767px) {
-  .flexslider .slides li .slide_content .headdings .sub_headding {
-    font-size: 34px;
-    line-height: 35px;
-  }
-  .flexslider .slides li .slide_content .headdings .sub_headding span {
-    line-height: 34px;
-  }
-  .flexslider
-    .slides
-    li
-    .slide_content
-    .headdings
-    .button-shopnow
-    .btn-primary {
-    padding: 7px 20px;
-    font-size: 14px;
-  }
-}
-@media (max-width: 650px) {
-  .flexslider .slides li .slide_content .headdings .headding_text {
-    font-size: 21px;
-    line-height: 26px;
-  }
-  .flexslider .slides li .slide_content .headdings .sub_headding {
-    font-size: 29px;
-    line-height: 35px;
-    margin-bottom: 21px;
-    margin-top: 12px;
-  }
-  .flexslider .slides li .slide_content {
-    bottom: 80px;
-    left: 20px;
-  }
-}
-@media (max-width: 575px) {
-  .flexslider .slides li .slide_content .headdings .headding_text {
-    font-size: 19px;
-    line-height: 24px;
-  }
-  .flexslider .slides li .slide_content .headdings .sub_headding {
-    font-size: 25px;
-    line-height: 32px;
-    margin-bottom: 20px;
-    margin-top: 7px;
-  }
-  .flexslider .slides li .slide_content .headdings .sub_headding span {
-    line-height: 30px;
-  }
-  .flexslider
-    .slides
-    li
-    .slide_content
-    .headdings
-    .button-shopnow
-    .btn-primary {
-    padding: 6px 18px;
-    font-size: 13px;
-  }
-  .flexslider .slides li .slide_content {
-    bottom: 60px;
-  }
-}
-@media (max-width: 480px) {
-  .flexslider .slides li .slide_content {
-    bottom: 35px;
-    left: 15px;
-  }
-  .flexslider .slides li .slide_content .headdings .headding_text {
-    font-size: 17px;
-    line-height: 20px;
-  }
-  .flexslider .slides li .slide_content .headdings .sub_headding {
-    font-size: 24px;
-    line-height: 30px;
-    margin-bottom: 14px;
-    margin-top: 7px;
-  }
-  .flexslider
-    .slides
-    li
-    .slide_content
-    .headdings
-    .button-shopnow
-    .btn-primary {
-    padding: 4px 15px;
-    font-size: 13px;
-    text-transform: capitalize;
-  }
-}
-@media (max-width: 380px) {
-  .flexslider .slides li .slide_content .headdings .sub_headding {
-    font-size: 21px;
-    line-height: 22px;
-    margin-top: 9px;
-  }
-  .flexslider .slides li .slide_content .headdings .sub_headding span {
-    line-height: 24px;
-  }
-  .flexslider
-    .slides
-    li
-    .slide_content
-    .headdings
-    .button-shopnow
-    .btn-primary {
-    padding: 3px 12px;
-    font-size: 12px;
-  }
-  .flexslider .slides li .slide_content {
-    bottom: 38px;
-  }
-  .flexslider .slides li .slide_content .headdings .headding_text {
-    display: none;
-  }
-}
-
+/* Full-bleed background image */
 .flexslider .slides img {
   width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
   display: block;
+  border-radius: 0 !important;
 }
-.flexslider .slides:after {
-  content: "\0020";
-  display: block;
-  clear: both;
-  visibility: hidden;
-  line-height: 0;
-  height: 0;
-}
-html[xmlns] .flexslider .slides {
-  display: block;
-}
-* html .flexslider .slides {
-  height: 1%;
-}
-.no-js .flexslider .slides > li:first-child {
-  display: block;
-}
-/* ====================================================================================================================
- * DEFAULT THEME
- * ====================================================================================================================*/
-.flexslider {
-  margin: 0;
-  position: relative;
-  zoom: 1;
-  overflow: hidden;
-  float: right;
-  width: calc(100% - 260px);
-  padding-left: 20px;
-  margin-top: 20px;
-}
-.flexslider .caption-description h2 {
-  font-size: 30px;
-  margin-bottom: 25px;
-  letter-spacing: 9px;
-}
-.flexslider .slides {
-  zoom: 1;
-}
-.flexslider .slides img {
-  height: auto;
-  -moz-user-select: none;
-  -webkit-border-radius: 5px;
-  -khtml-border-radius: 5px;
-  -moz-border-radius: 5px;
-}
-.flex-viewport {
-  max-height: 2000px;
-  -webkit-transition: all 1s ease;
-  -moz-transition: all 1s ease;
-  -ms-transition: all 1s ease;
-  -o-transition: all 1s ease;
-  transition: all 1s ease;
-  direction: ltr !important;
-}
-.loading .flex-viewport {
-  max-height: 300px;
-}
-.carousel li {
-  margin-right: 5px;
-}
-.flex-direction-nav {
-  *height: 0;
-}
-.flex-direction-nav a {
-  text-decoration: none;
-  display: block;
-  margin: -25px 0 0;
+
+/* CAPTION CONTAINER – Left side, vertically centered */
+.caption-description {
   position: absolute;
   top: 50%;
-  z-index: 8;
-  overflow: hidden;
+  left: 5%;
+  transform: translateY(-50%);
+  width: 550px;
+  max-width: 90%;
+  z-index: 10;
+  color: #fff;
+  text-align: left;
+}
+
+/* ------------------------------------------------------------------
+   RESTORE YOUR ORIGINAL TEXT STYLES & ANIMATIONS (your original ones)
+   ------------------------------------------------------------------ */
+.caption-description .headdings {
   opacity: 0;
-  cursor: pointer;
-  background: #afbc25;
+  transform: translateX(50px);
+  transition: all 0.3s ease-out;
+}
+
+.caption-description .headdings .headding_text {
+  font-weight: 200 30px/40px "Roboto", sans-serif;
+  margin: 0 0 25px;
+  opacity: 0;
+  transform: translateX(50px);
+  transition: all 0.3s ease-out 0.3s;
+}
+
+.caption-description .headdings .sub_headding {
+  font: 500 46px/57px "Roboto", sans-serif;
+  margin: 0 0 50px;
+  opacity: 0;
+  transform: translateX(50px);
+  transition: all 0.3s ease-out 0.4s;
+}
+
+.caption-description .headdings .sub_headding span {
+  display: block;
+}
+
+.caption-description .headdings .button-shopnow .btn-primary {
+  padding: 12px 35px;
+  background: #000;
+  color: #fff;
+  border: 2px solid #000;
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: 4px;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.2s ease-out 0.1s;
+}
+
+.caption-description .headdings .button-shopnow .btn-primary:hover {
+  background: #fff;
   color: #000;
-  -webkit-transition: all 0.3s ease-in-out;
-  -moz-transition: all 0.3s ease-in-out;
-  -ms-transition: all 0.3s ease-in-out;
-  -o-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-  font-size: 0;
-  line-height: 1;
-  height: 50px;
-  width: 30px;
-  line-height: 50px;
-  padding: 0 10px;
 }
-.flex-direction-nav a:hover {
-  background-color: #fff;
+
+/* Active slide → trigger animations */
+.flex-active-slide .caption-description .headdings,
+.flex-active-slide .caption-description .headdings .headding_text,
+.flex-active-slide .caption-description .headdings .sub_headding,
+.flex-active-slide
+  .caption-description
+  .headdings
+  .button-shopnow
+  .btn-primary {
+  opacity: 1 !important;
+  transform: translateX(0) translateY(0) !important;
 }
+
+/* ------------------------------------------------------------------
+   NAVIGATION ARROWS
+   --*/
+.flex-direction-nav a {
+  width: 50px;
+  height: 80px;
+  background: rgba(0, 0, 0, 0.4);
+  top: 50%;
+  transform: translateY(-50%);
+  margin: 0;
+  opacity: 0;
+  transition: all 0.4s;
+  border-radius: 0 4px 4px 0;
+}
+
 .flex-direction-nav a:before {
   font-family: "FontAwesome";
-  font-size: 26px;
-  display: inline-block;
+  font-size: 36px;
+  line-height: 80px;
   color: #fff;
-  font-weight: 300;
 }
-.flex-direction-nav a:hover:before {
-  color: #000;
-}
-.flex-direction-nav a.flex-prev:before {
-  content: "\f104";
-}
-.flex-direction-nav a.flex-next:before {
-  content: "\f105";
-}
+
 .flex-direction-nav .flex-prev {
-  left: 20px;
-  border-radius: 0 5px 5px 0;
-  -webkit-border-radius: 0 5px 5px 0;
-  -moz-border-radius: 0 5px 5px 0;
-  -ms-border-radius: 0 5px 5px 0;
-  -o-border-radius: 0 5px 5px 0;
+  left: 0;
+  border-radius: 0 4px 4px 0;
 }
 .flex-direction-nav .flex-next {
-  right: 0px;
-  text-align: right;
-  border-radius: 5px 0px 0px 5px;
-  -webkit-border-radius: 5px 0px 0px 5px;
-  -moz-border-radius: 5px 0px 0px 5px;
-  -ms-border-radius: 5px 0px 0px 5px;
-  -o-border-radius: 5px 0px 0px 5px;
+  right: 0;
+  left: auto;
+  border-radius: 4px 0 0 4px;
 }
-.flexslider:hover .flex-direction-nav .flex-prev {
-  opacity: 1;
-}
-.flexslider:hover .flex-direction-nav .flex-next {
+
+.flexslider:hover .flex-direction-nav a {
   opacity: 1;
 }
 
-.flex-direction-nav .flex-disabled {
-  opacity: 0 !important;
-  filter: alpha(opacity=0);
-  cursor: default;
-  z-index: -1;
+.flex-direction-nav a:hover {
+  background: rgba(175, 188, 37, 0.9);
 }
-.flex-pauseplay a {
-  display: block;
-  width: 20px;
-  height: 20px;
-  position: absolute;
-  bottom: 5px;
-  left: 10px;
-  opacity: 0.8;
+
+/* ------------------------------------------------------------------
+   PAGINATION – always at bottom center
+   ------------------------------------------------------------------ */
+.flex-control-nav {
+  bottom: 30px !important;
+  width: 100%;
+  text-align: center;
   z-index: 10;
-  overflow: hidden;
-  cursor: pointer;
-  color: #000;
 }
-.flex-pauseplay a:before {
-  font-family: "Material Icons";
-  font-size: 20px;
-  display: inline-block;
-  content: "\E039";
+
+.flex-control-paging li a ::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  background: transparent;
 }
-.flex-pauseplay a:hover {
-  opacity: 1;
+
+.flex-control-paging li a {
+  width: 13px;
+  height: 13px;
+  background: transparent;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
 }
-.flex-pauseplay a.flex-play:before {
-  content: "\E036";
+
+.flex-control-paging li a:hover,
+.flex-control-paging li a.flex-active {
+  background: #000;
+  border-color: #000;
+  transform: scale(1.2);
 }
+
+.flex-direction-nav {
+  display: none;
+}
+
+/* ===================================================================
+   FLEXSLIDER BOTTOM PAGINATION (DOTS) – CLEAN & MODERN
+   =================================================================== */
+
 .flex-control-nav {
   width: 100%;
   position: absolute;
-  margin: 0;
-  display: block;
-  bottom: 7px;
+  bottom: 30px !important; /* distance from bottom */
+  left: 0;
   text-align: center;
-  z-index: 2;
-  -webkit-transition: all 500ms ease;
-  -moz-transition: all 500ms ease;
-  -o-transition: all 500ms ease;
-  transition: all 500ms ease;
-  line-height: 21px;
-}
-.flex-control-nav li {
-  margin: 0 5px;
-  display: inline-block;
-  zoom: 1;
-  *display: inline;
-}
-.flex-control-paging li a {
-  width: 12px;
-  height: 12px;
-  display: block;
-  background: #ffffff;
-  cursor: pointer;
-  text-indent: -9999px;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  -ms-border-radius: 3px;
-  -o-border-radius: 3px;
-  border-radius: 3px;
-  -webkit-transition: all 500ms ease;
-  -moz-transition: all 500ms ease;
-  -o-transition: all 500ms ease;
-  transition: all 500ms ease;
-}
-.flex-control-paging li a:hover,
-.flex-control-paging li a.flex-active {
-  background: #afbc26;
-  border-color: #000;
-  ransform: rotate(45deg);
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  -o-transform: rotate(45deg);
-  -moz-transform: rotate(45deg);
-  -webkit-transition: all 500ms ease 0s;
-  -moz-transition: all 500ms ease 0s;
-  -o-transition: all 500ms ease 0s;
-  transition: all 500ms ease 0s;
-}
-/*.flex-control-paging li a.flex-active {
-	cursor: default;
-}*/
-.flex-control-thumbs {
-  margin: 5px 0 0;
-  position: static;
-  overflow: hidden;
-}
-.flex-control-thumbs li {
-  width: 25%;
-  float: left;
+  z-index: 10;
+  padding: 0;
   margin: 0;
+  pointer-events: none; /* optional – lets clicks pass through to slide links */
 }
-.flex-control-thumbs img {
-  width: 100%;
-  height: auto;
-  display: block;
-  opacity: 0.7;
-  cursor: pointer;
-  -moz-user-select: none;
-  -webkit-transition: all 1s ease;
-  -moz-transition: all 1s ease;
-  -ms-transition: all 1s ease;
-  -o-transition: all 1s ease;
-  transition: all 1s ease;
-}
-.flex-control-thumbs img:hover {
-  opacity: 1;
-}
-.flex-control-thumbs .flex-active {
-  opacity: 1;
-  cursor: default;
-}
-/* ====================================================================================================================
- * RESPONSIVE
- * ====================================================================================================================*/
 
-@media (max-width: 1199px) {
-  .flexslider {
-    width: calc(100% - 199px);
+.flex-control-nav li {
+  display: inline-block;
+  margin: 0 6px;
+  pointer-events: all; /* re-enable clicks on the dots themselves */
+}
+
+.flex-control-paging li a {
+  width: 13px;
+  height: 13px;
+  display: block;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  text-indent: -9999px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  border-radius: 17%;
+  width: 28px;
+  height: 8px;
+  border: none;
+  outline: 10px;
+}
+
+.flex-control-paging li a:hover {
+  background: #000;
+  border-color: #000;
+  transform: scale(1.2);
+}
+
+.flex-control-paging li a.flex-active {
+  background: #000;
+  border-color: #000;
+  transform: scale(1.3);
+  cursor: default;
+  box-shadow: 0 0 10px rgba(198, 198, 198, 0.3);
+}
+
+/* Mobile adjustments – smaller & closer to bottom */
+@media (max-width: 767px) {
+  .flex-control-nav {
+    bottom: 20px !important;
+  }
+  .flex-control-paging li a {
+    width: 11px;
+    height: 11px;
   }
 }
+
+@media (max-width: 480px) {
+  .flex-control-nav {
+    bottom: 15px !important;
+  }
+  .flex-control-paging li a {
+    width: 10px;
+    height: 10px;
+  }
+}
+
+/* ------------------------------------------------------------------
+   RESPONSIVE ADJUSTMENTS (keeps your original breakpoints)
+   ------------------------------------------------------------------ */
+@media (max-width: 1199px) {
+  .caption-description {
+    left: 40px;
+    width: 480px;
+  }
+  .caption-description .headdings .sub_headding {
+    font-size: 40px;
+    line-height: 50px;
+  }
+}
+
 @media (max-width: 991px) {
-  .flexslider {
-    width: 100%;
-    padding: 0;
-    margin-top: 0;
+  .caption-description {
+    left: 30px;
+    width: 420px;
+  }
+  .caption-description .headdings .sub_headding {
+    font-size: 36px;
+    line-height: 46px;
+    margin-bottom: 30px;
   }
   .flex-direction-nav {
     display: none;
   }
+
+  .flexslider {
+    height: 50vh !important;
+    min-height: 400px;
+  }
+
+  .caption-description {
+    top: 30%;
+  }
+  .flexslider .slides > li {
+    height: 55vh;
+  }
 }
-@media (max-width: 480px) {
-  .flex-control-nav {
-    bottom: 4px;
-    line-height: 0;
+
+@media (max-width: 767px) {
+  .caption-description {
+    left: 20px;
+    width: 90%;
+  }
+  .caption-description .headdings .sub_headding {
+    font-size: 32px;
+    line-height: 40px;
+  }
+  .caption-description .headdings .headding_text {
+    font-size: 24px;
   }
 }
