@@ -22,6 +22,8 @@
  * @copyright Since 2007 PrestaShop SA and Contributors
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  *}
+{assign var="contact_vars" value=Module::getInstanceByName('ps_contactinfo')->getWidgetVariables()}
+{assign var="contact_infos" value=$contact_vars.contact_infos}
 {block name='header_banner'}
   <div class="header-banner">
     {hook h='displayBanner'}
@@ -57,7 +59,7 @@
 	</nav>
 {/block}
 
-{block name='header_top'}
+{* {block name='header_top'}
 	<div class="header-top">
 		<div class="container">
 			<div class="header_logo">
@@ -92,9 +94,64 @@
 			{hook h='displayTop'}					
 		</div>
    </div>	
-{/block}
+{/block} *}
+
 <div class="header-top-inner">
 	<div class="container">
 		{hook h='displayNavFullWidth'}
 	</div>
 </div>
+
+
+{block name='header_top'}
+	<div class="header-top">
+		<div class="container">
+		    <div class="text-xs-left mobile hidden-lg-up mobile-menu">
+				<div class="menu-icon">
+					<div class="cat-title">{l s='Menu' d='Shop.Theme.Global'}</div>		  
+				</div>
+				<div id="mobile_top_menu_wrapper" class="row hidden-lg-up">
+					<div class="mobile-menu-inner">
+						<div class="menu-icon">
+							<div class="cat-title">{l s='Menu' d='Shop.Theme.Global'}</div>		  
+						</div>
+				
+				        <div class="js-top-menu mobile" id="_mobile_top_menu"></div>
+						<div class="js-top-menu mobile" id="_mobile_main_menu"></div>
+					</div>
+				</div>
+			</div>
+
+			{hook h="displayNav2"}
+			<div>
+              <i class="fa fa-envelope-o"></i>
+               {if isset($contact_infos.email) && $contact_infos.email}
+					{mailto address=$contact_infos.email encode="javascript"}
+				{/if}
+            </div>
+		</div>
+   </div>	
+{/block}
+
+<style>
+	#header .header-top{
+		min-height: auto;
+		height: 48px;
+		border-bottom: 1px solid hsla(0, 0%, 93%, .349);
+	}
+	#header .header-top .container{
+		height: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+	#header .header-top .container::after{
+		content: "";
+		display: none;
+	}
+	
+	#header .language-selector {
+    	display: inline-block;
+	}
+	
+</style>
