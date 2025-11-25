@@ -96,17 +96,23 @@
    </div>	
 {/block} *}
 
-<div class="header-top-inner">
-	<div class="container">
-		{hook h='displayNavFullWidth'}
-	</div>
-</div>
-
-
 {block name='header_top'}
 	<div class="header-top">
 		<div class="container">
-		    <div class="text-xs-left mobile hidden-lg-up mobile-menu">
+			{hook h="displayNav2"}
+			<div>
+              <i class="fa fa-envelope-o"></i>
+               {if isset($contact_infos.email) && $contact_infos.email}
+					{mailto address=$contact_infos.email encode="javascript"}
+				{/if}
+            </div>
+		</div>
+   </div>	
+{/block}
+
+<div class="header-top-inner">
+	<div class="container">
+	<div class="text-xs-left mobile hidden-lg-up mobile-menu">
 				<div class="menu-icon">
 					<div class="cat-title">{l s='Menu' d='Shop.Theme.Global'}</div>		  
 				</div>
@@ -121,19 +127,12 @@
 					</div>
 				</div>
 			</div>
-
-			{hook h="displayNav2"}
-			<div>
-              <i class="fa fa-envelope-o"></i>
-               {if isset($contact_infos.email) && $contact_infos.email}
-					{mailto address=$contact_infos.email encode="javascript"}
-				{/if}
-            </div>
-		</div>
-   </div>	
-{/block}
+		{hook h='displayNavFullWidth'}
+	</div>
+</div>
 
 <style>
+	/* styles for header - top  */
 	#header .header-top{
 		min-height: auto;
 		height: 48px;
@@ -153,5 +152,11 @@
 	#header .language-selector {
     	display: inline-block;
 	}
+
+	/* styles for header top inner  */
+	#header .header-top-inner{
+		background-color: #ffffff;
+	}
 	
+
 </style>
