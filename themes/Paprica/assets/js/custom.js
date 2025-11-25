@@ -627,7 +627,7 @@ function responsivecolumn() {
     $("#header #desktop_cart").insertAfter(
       "#header .header-top .container .header_logo"
     );
-    $("#czheadercmsblock").appendTo(".mobile-menu-inner");
+    // $("#czheadercmsblock").appendTo(".mobile-menu-inner");
   } else if ($(document).width() >= 992) {
     $(".container #columns_inner #left-column").prependTo(
       ".container #columns_inner"
@@ -639,15 +639,15 @@ function responsivecolumn() {
     // 		$('.header-top').removeClass('fixed');
     // 	}
     // });
-    $("#czheadercmsblock").insertAfter(
-      "#header .header-top .container .user-info"
-    );
+    // $("#czheadercmsblock").insertAfter(
+    //   "#header .header-top .container .user-info"
+    // );
     $("#header #desktop_cart").insertAfter(
       "#header .header-top-inner .container .horizontal-menu"
     );
   }
 
-  $("#language-selector").appendTo(".user-info > ul.dropdown-menu");
+  //   $("#language-selector").appendTo(".user-info > ul.dropdown-menu");
   $("#currency-selector").appendTo(".user-info > ul.dropdown-menu");
 }
 

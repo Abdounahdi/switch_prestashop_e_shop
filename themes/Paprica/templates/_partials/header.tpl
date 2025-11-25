@@ -112,7 +112,8 @@
 
 <div class="header-top-inner">
 	<div class="container">
-	<div class="text-xs-left mobile hidden-lg-up mobile-menu">
+		<div class="menu_logo_container">
+			<div class="text-xs-left mobile hidden-lg-up mobile-menu">
 				<div class="menu-icon">
 					<div class="cat-title">{l s='Menu' d='Shop.Theme.Global'}</div>		  
 				</div>
@@ -127,13 +128,28 @@
 					</div>
 				</div>
 			</div>
-		{hook h='displayNavFullWidth'}
+			<h1>
+                <a href="{$urls.pages.index}">
+                  <img class="logo img-responsive" src="{$shop.logo}" alt="{$shop.name}" loading="lazy">
+                </a>
+              </h1>
+		</div>
+		<div class="header_items_container">
+			{hook h='displayNavFullWidth'}
+			{hook h="displayTop"}
+		</div>
 	</div>
 </div>
 
 <style>
+
+	#index #header .container{
+		margin: 0;
+		width: 100%;
+		padding: 0 35px;
+	}
 	/* styles for header - top  */
-	#header .header-top{
+	#index #header .header-top{
 		min-height: auto;
 		height: 48px;
 		border-bottom: 1px solid hsla(0, 0%, 93%, .349);
@@ -144,9 +160,21 @@
 		align-items: center;
 		justify-content: space-between;
 	}
+	#header .header-top-inner .container{
+		display: flex;
+		justify-content: space-between;
+		width: 100%;
+	}
+	#header .header-top-inner .container::after{
+			display: none;
+		}
 	#header .header-top .container::after{
 		content: "";
 		display: none;
+	}
+
+	#header .menu_logo_container{
+		display: flex;
 	}
 	
 	#header .language-selector {
