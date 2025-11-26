@@ -23,6 +23,8 @@
 *  International Registered Trademark & Property of PrestaShop SA
 *}
 
+
+{if $page.page_name == 'index'}
 {if $czhomeslider.slides}
 	<div class="flexslider" data-interval="{$czhomeslider.speed}" data-pause="{$czhomeslider.pause}">
 		<div class="loadingdiv spinner"></div>
@@ -42,4 +44,4 @@
 		</ul>
 	</div>
 {/if}
-
+{/if}
