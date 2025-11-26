@@ -196,7 +196,7 @@ class Ps_Shoppingcart extends Module implements WidgetInterface
         return
             parent::install()
                 && $this->registerHook('displayHeader')
-                && $this->registerHook('displayNav2')
+                && $this->registerHook('displayTop')
                 && Configuration::updateValue('PS_BLOCK_CART_AJAX', 1);
     }
 

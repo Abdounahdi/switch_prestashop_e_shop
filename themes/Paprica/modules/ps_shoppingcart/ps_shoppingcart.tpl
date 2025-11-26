@@ -181,3 +181,11 @@
     </div>
   </div>
 </div>
+
+
+<style>
+    #header .header-top-inner #desktop_cart {
+        display: block;
+    }
+
+</style>

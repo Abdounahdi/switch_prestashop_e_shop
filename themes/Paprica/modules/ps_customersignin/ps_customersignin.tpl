@@ -82,3 +82,11 @@
       </li>
 	</ul>
   </div>
+
+  <style>
+  @media (max-width: 991px) {
+      #header .user-info .dropdown-menu {
+          height: auto;
+      }
+  }
+  </style>
