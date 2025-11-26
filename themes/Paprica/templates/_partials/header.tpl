@@ -128,11 +128,9 @@
 					</div>
 				</div>
 			</div>
-			<h1>
                 <a href="{$urls.pages.index}">
                   <img class="logo img-responsive" src="{$shop.logo}" alt="{$shop.name}" loading="lazy">
                 </a>
-              </h1>
 		</div>
 		<div class="header_items_container">
 			{hook h='displayNavFullWidth'}
@@ -141,50 +139,43 @@
 	</div>
 </div>
 
-<style>
+<script>
+// faced a problem with the div positions that i couldn't fix with just changing hooks 
+// this js waits 0.1s for the dom to load and change header items placemenet 
+document.addEventListener("DOMContentLoaded", function () {
+	if (window.innerWidth < 991) return;
 
-	#index #header .container{
-		margin: 0;
-		width: 100%;
-		padding: 0 35px;
-	}
-	/* styles for header - top  */
-	#index #header .header-top{
-		min-height: auto;
-		height: 48px;
-		border-bottom: 1px solid hsla(0, 0%, 93%, .349);
-	}
-	#header .header-top .container{
-		height: 100%;
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-	}
-	#header .header-top-inner .container{
-		display: flex;
-		justify-content: space-between;
-		width: 100%;
-	}
-	#header .header-top-inner .container::after{
-			display: none;
-		}
-	#header .header-top .container::after{
-		content: "";
-		display: none;
-	}
+	setTimeout(() => {
+		
+		 const container = document.querySelector(".header_items_container");
+		if (!container) return;
 
-	#header .menu_logo_container{
-		display: flex;
-	}
-	
-	#header .language-selector {
-    	display: inline-block;
-	}
+		const leftWrapper = document.createElement("div");
+		leftWrapper.classList.add("header-nav-left");
 
-	/* styles for header top inner  */
-	#header .header-top-inner{
-		background-color: #ffffff;
-	}
-	
+		const rightWrapper = document.createElement("div");
+		rightWrapper.classList.add("header-nav-right");
 
-</style>
+		// Add wrappers
+		container.insertBefore(leftWrapper, container.firstChild);
+		container.appendChild(rightWrapper);
+
+		// Select elements from inside container
+		const searchWidget = container.querySelector("#search_widget");
+		const userInfo = container.querySelector(".user-info");
+		const desktopCart = container.querySelector("#desktop_cart");
+
+		// Append to right wrapper in the correct order
+		if (searchWidget) rightWrapper.appendChild(searchWidget);
+		if (userInfo) rightWrapper.appendChild(userInfo);
+		if (desktopCart) rightWrapper.appendChild(desktopCart);
+
+		// Move everything else to LEFT wrapper
+		Array.from(container.children).forEach(child => {
+			if (child !== leftWrapper && child !== rightWrapper && !rightWrapper.contains(child)) {
+				leftWrapper.appendChild(child);
+			}
+		});
+	}, 100);
+});
+</script>
